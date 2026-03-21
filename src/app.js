@@ -23,10 +23,9 @@ class App {
         this.port = process.env.PORT || 3000;
         this.rateLimit = process.env.API_RATE_LIMIT || 100;
         this.rateLimitWindow = process.env.API_RATE_LIMIT_WINDOW || 15 * 60 * 1000;
-        this.urlBase = `/api/detector/plagio`;
         this.middlewares();
         this.urls = {
-            routes: `${this.urlBase}/`,
+            routes: `/`,
         }
         this.routes();
     }
