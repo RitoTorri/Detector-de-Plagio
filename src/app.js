@@ -26,13 +26,15 @@ class App {
         this.urlBase = `/api/detector/plagio`;
         this.middlewares();
         this.urls = {
-            compare: `${this.urlBase}/compare`,
+            routes: `${this.urlBase}/`,
         }
         this.routes();
     }
 
     middlewares = () => {
         this.app.use(express.json());
+        this.app.use(express.urlencoded({ extended: true }));
+        this.app.use(express.static('public'));
         this.app.use(cors());
         this.app.use(rateLimit({
             windowMs: parseInt(this.rateLimitWindow), // 15 minutes
@@ -42,13 +44,13 @@ class App {
     }
 
     routes = () => {
-        this.app.use(this.urls.compare, compare);
+        this.app.use(this.urls.routes, compare);
     }
 
     start = () => {
         this.app.listen(this.port, () => {
             console.log(`Server started on port ${this.port}`);
-            console.log(`API available at http://localhost:${this.port}${this.urls.compare}`);
+            console.log(`Project available at http://localhost:${this.port}${this.urls.routes}`);
         });
     }
 }

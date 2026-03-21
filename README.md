@@ -1,25 +1,24 @@
 # 🔍 Detector de Plagio
 
-![Estado del proyecto](https://img.shields.io/badge/Estado-Completado-green?style=for-the-badge)
+<div style="display: flex; align-items: center; gap: 30px; padding: 20px; border: 1px solid #eee; border-radius: 12px; font-family: sans-serif;">
+  
+  <div style="flex-shrink: 0;">
+    <img src="public/icon.png" alt="Logo de la API" width="220" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+  </div>
 
-<table>
-  <tr>
-    <td>
-      <img src="public/icon.png" alt="Logo de la API" width="250" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    </td>
-    <td>
-      <h2>📋 Descripción</h2>
-      <p>Esta API REST permite analizar la similitud entre dos textos y devuelve un porcentaje de coincidencia en formato JSON.
-       </p>
-      
-<h2>🚀 Funcionalidades</h2>
-      <ol>
-        <li>Detectar similitud entre 2 textos</li>
-        <li>Devolver porcentajes como resultados</li>
-      </ol>
-    </td>
-  </tr>
-</table>
+  <div>
+    <h2>📋 Descripción</h2>
+    <p>
+      Esta <strong>API REST</strong> permite analizar la similitud entre dos fragmentos de texto mediante algoritmos avanzados. Devuelve un porcentaje de coincidencia en formato <strong>JSON</strong> de manera clara e intuitiva, facilitando la toma de decisiones basada en datos.
+    </p>
+    <h2>🚀 Funcionalidades</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li style="margin-bottom: 8px;">✅ <strong>Análisis comparativo:</strong> Detecta el nivel de similitud entre dos textos.</li>
+      <li>📊 <strong>Resultados precisos:</strong> Entrega métricas en porcentaje listas para su consumo.</li>
+    </ul>
+  </div>
+  
+</div>
 
 ## 🛠 Stack Tecnológico
 
@@ -51,6 +50,7 @@ Debes de cambiarle el nommbre del archivo `example.env` a `.env` y luego debes d
 
 `API_RATE_LIMIT_WINDOW`: Tiempo de bloqueo de dirección IP. Debes de cambiarlo a un número en milisegundos. Por defecto es 15 minutos (900000 milisegundos  
 
+#### 🌍 Ejemplo de archivo `.env`
 ```bash
 PORT=3000
 API_RATE_LIMIT=100
@@ -101,10 +101,10 @@ Este proyecto utiliza Docker exclusivamente para entornos de producción. Al no 
 Para construir la imagen desde cero y levantar el servicio, ejecuta:
 ```bash
 # Construir la imagen de docker
-docker compose build --no-cache detector-de-plagio
+npm run image:build
 
 # ejecutar en primer plano
-docker compose up detector-de-plagio
+npm run image:run
 
 # Ejecutar en segundo plano
 docker compose up -d detector-de-plagio

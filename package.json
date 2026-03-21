@@ -13,6 +13,9 @@
     "start:local": "node --env-file=.env src/index.js",
     "dev:local": "cross-env NODE_ENV=development nodemon --env-file=.env src/index.js",
 
+    "image:build": "docker compose build --no-cache",
+    "image:run": "docker compose up",
+
     "test": "cross-env NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules --env-file=.env jest"
   },
   "repository": {

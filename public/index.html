@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compara dos textos y obtén un porcentaje de similitud.">
+    <title>Detector de plagio · Similitud entre textos</title>
+    <link rel="icon" type="image/x-icon" href="/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <div class="bg-pattern" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="brand">
+            <span class="brand-icon" aria-hidden="true">◈</span>
+            <div>
+                <h1 class="site-title">Detector de plagio</h1>
+                <p class="site-tagline">Compara dos fragmentos y mide su similitud</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="panel inputs-panel" aria-labelledby="inputs-heading">
+            <h2 id="inputs-heading" class="sr-only">Textos a comparar</h2>
+            <div class="inputs-grid">
+                <div class="field">
+                    <label for="string1">Texto A</label>
+                    <textarea id="string1" name="string1" rows="10" maxlength="1000"
+                        placeholder="Pega o escribe el primer texto…" spellcheck="true"></textarea>
+                    <span class="char-count" id="count1" aria-live="polite">0 / 1000</span>
+                </div>
+                <div class="field">
+                    <label for="string2">Texto B</label>
+                    <textarea id="string2" name="string2" rows="10" maxlength="1000"
+                        placeholder="Pega o escribe el segundo texto…" spellcheck="true"></textarea>
+                    <span class="char-count" id="count2" aria-live="polite">0 / 1000</span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="button" id="btn-compare" class="btn btn-primary">
+                    <span class="btn-label">Comparar textos</span>
+                    <span class="btn-spinner" hidden aria-hidden="true"></span>
+                </button>
+                <button type="button" id="btn-clear" class="btn btn-ghost">Limpiar</button>
+            </div>
+            <p id="form-error" class="form-error" role="alert" hidden></p>
+        </section>
+
+        <section class="panel result-panel" id="result-section" aria-labelledby="result-heading" hidden>
+            <h2 id="result-heading" class="result-title">Resultado</h2>
+            <p class="result-caption">Porcentaje de similitud entre ambos textos</p>
+
+            <div class="percent-display">
+                <span class="percent-value" id="percent-value">0</span>
+                <span class="percent-unit">%</span>
+            </div>
+
+            <div class="bar-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+                aria-labelledby="result-heading" id="similarity-bar-wrap">
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-fill"></div>
+                    <div class="bar-glow" id="bar-glow"></div>
+                </div>
+                <div class="bar-ticks" aria-hidden="true">
+                    <span>0</span><span>25</span><span>50</span><span>75</span><span>100</span>
+                </div>
+            </div>
+
+            <p class="result-hint" id="result-hint"></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Máximo 1000 caracteres por campo · Resultado basado en similitud de cadenas</p>
+    </footer>
+
+    <script src="/index.js"></script>
+</body>
+
+</html>
