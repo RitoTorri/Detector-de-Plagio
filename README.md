@@ -1,24 +1,13 @@
 # 🔍 Detector de Plagio
 
-<div style="display: flex; align-items: center; gap: 30px; padding: 20px; border: 1px solid #eee; border-radius: 12px; font-family: sans-serif;">
-  
-  <div style="flex-shrink: 0;">
-    <img src="public/icon.png" alt="Logo de la API" width="220" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-  </div>
+## 📋 Descripción
 
-  <div>
-    <h2>📋 Descripción</h2>
-    <p>
-      Esta <strong>API REST</strong> permite analizar la similitud entre dos fragmentos de texto mediante algoritmos avanzados. Devuelve un porcentaje de coincidencia en formato <strong>JSON</strong> de manera clara e intuitiva, facilitando la toma de decisiones basada en datos.
-    </p>
-    <h2>🚀 Funcionalidades</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li style="margin-bottom: 8px;">✅ <strong>Análisis comparativo:</strong> Detecta el nivel de similitud entre dos textos.</li>
-      <li>📊 <strong>Resultados precisos:</strong> Entrega métricas en porcentaje listas para su consumo.</li>
-    </ul>
-  </div>
-  
-</div>
+Esta **API REST** permite analizar la similitud entre dos fragmentos de texto mediante algoritmos avanzados. Devuelve un porcentaje de coincidencia en formato **JSON** de manera clara e intuitiva, facilitando la toma de decisiones basada en datos.
+
+## 🚀 Funcionalidades
+
+- ✅ **Análisis comparativo:** Detecta el nivel de similitud entre dos textos.
+- 📊 **Resultados precisos:** Entrega métricas en porcentaje listas para su consumo.
 
 ## 🛠 Stack Tecnológico
 
@@ -40,8 +29,6 @@ Accede a la guía detallada de endpoints y pruebas:
 ## ⚙️ Configuracion
 En la carpeta raiz del proyecto hay un archivo llamado `example.env` que contiene las variables de entorno necesarias para ejecutar el proyecto. 
 Debes de cambiarle el nommbre del archivo `example.env` a `.env` y luego debes de darle valor a las variable definidas en ese archivo.
-
-**Importante:** El archivo `.env` debe de estar en la carpeta raiz del proyecto. Ademas las variables definidas alli seran o son utilizada para la ejecucion del proyecto desde docker.
 
 #### 🌍 Variables de entorno
 `PORT`: Puerto de ejecución del servidor. Puedes cambiarlo a cualquier puerto que desees. Por defecto es `3000`.  
