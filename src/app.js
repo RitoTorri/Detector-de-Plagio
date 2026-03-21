@@ -24,9 +24,6 @@ class App {
         this.rateLimit = process.env.API_RATE_LIMIT || 100;
         this.rateLimitWindow = process.env.API_RATE_LIMIT_WINDOW || 15 * 60 * 1000;
         this.middlewares();
-        this.urls = {
-            routes: `/`,
-        }
         this.routes();
     }
 
@@ -43,13 +40,12 @@ class App {
     }
 
     routes = () => {
-        this.app.use(this.urls.routes, compare);
+        this.app.use('/', compare);
     }
 
     start = () => {
         this.app.listen(this.port, () => {
-            console.log(`Server started on port ${this.port}`);
-            console.log(`Project available at http://localhost:${this.port}${this.urls.routes}`);
+            console.log(`🚀 Server started on http://localhost:${this.port}`);
         });
     }
 }

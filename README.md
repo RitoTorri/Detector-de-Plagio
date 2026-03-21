@@ -82,7 +82,7 @@ npm run install:prod
 npm run install:all
 ```
 
-Ejecuta el ocdigo de manera local:
+Ejecuta el codigo de manera local:
 ```bash
 # Ejecutar el servidor de desarrollo
 npm run dev:local
@@ -109,6 +109,23 @@ npm run image:run
 # Ejecutar en segundo plano
 docker compose up -d detector-de-plagio
 ```
+
+### 📍 Ruta de acceso
+Este proyecto está disponible en la siguiente ruta:
+```bash
+  http://localhost:3000
+```
+
+## 📖 Ejemplo de uso
+
+<div align="center">
+
+### 1️⃣ Paso uno: Ingresa los textos a comparar
+![Primero agrega los textos en cada campo](public/ejemplo1.png)
+
+### 2️⃣ Paso dos: Obtén el análisis de similitud
+![Luego compara los textos](public/ejemplo2.png)
+</div>
 
 ## 💡 ¿Necesitas ayuda o encontraste un error?
 

@@ -2,7 +2,7 @@
     'use strict';
 
     const MAX_LEN = 1000;
-    const API_URL = '/api/detector/plagio/compare';
+    const API_URL = '/compare';
 
     const el = {
         string1: document.getElementById('string1'),
