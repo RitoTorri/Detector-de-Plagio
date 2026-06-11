@@ -11,7 +11,6 @@ class App {
     // Atributos
     app;
     port;
-    urlBase;
 
     // Rate limir
     rateLimit;
