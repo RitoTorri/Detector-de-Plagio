@@ -32,22 +32,23 @@ class App {
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(express.static(path.join(__dirname, '..', 'public')));
         this.app.use(cors());
-        this.app.use(rateLimit({
+        /*this.app.use(rateLimit({
             windowMs: parseInt(this.rateLimitWindow), // 15 minutes
             max: parseInt(this.rateLimit), // Limit each IP to 100 requests per `window` (here, per 15 minutes)
             message: 'Too many requests from this IP, please try again in 15 minutes'
-        }));
+        }));*/
     }
 
     routes = () => {
         this.app.use('/', compare);
     }
 
+    /*
     start = () => {
         this.app.listen(this.port, () => {
             console.log(`🚀 Server started on http://localhost:${this.port}`);
         });
-    }
+    }*/
 }
 
 module.exports = App;
