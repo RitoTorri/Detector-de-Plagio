@@ -103,17 +103,6 @@ Este proyecto está disponible en la siguiente ruta:
   http://localhost:3000
 ```
 
-## 📖 Ejemplo de uso
-
-<div align="center">
-
-### 1️⃣ Paso uno: Ingresa los textos a comparar
-![Primero agrega los textos en cada campo](public/ejemplo1.png)
-
-### 2️⃣ Paso dos: Obtén el análisis de similitud
-![Luego compara los textos](public/ejemplo2.png)
-</div>
-
 ## 💡 ¿Necesitas ayuda o encontraste un error?
 
 Si experimentas problemas con la API o consideras que la documentación puede mejorar, te invitamos a abrir un [Issue en GitHub](https://github.com/RitoTorri/Detector-de-Plagio/issues). Tu retroalimentación es fundamental para seguir mejorando este proyecto.
