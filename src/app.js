@@ -2,7 +2,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const rateLimit = require('express-rate-limit');
+//const rateLimit = require('express-rate-limit');
 
 // Importación de rutas
 const compare = require('./router/compare.route');
@@ -11,18 +11,18 @@ const compare = require('./router/compare.route');
 class App {
     // Atributos
     app;
-    port;
+    //port;
 
     // Rate limir
-    rateLimit;
-    rateLimitWindow;
+    //rateLimit;
+    //rateLimitWindow;
 
     // Inicializacion de atributos
     constructor() {
         this.app = new express();
-        this.port = process.env.PORT || 3000;
-        this.rateLimit = process.env.API_RATE_LIMIT || 100;
-        this.rateLimitWindow = process.env.API_RATE_LIMIT_WINDOW || 15 * 60 * 1000;
+        //this.port = process.env.PORT || 3000;
+        // this.rateLimit = process.env.API_RATE_LIMIT || 100;
+        // this.rateLimitWindow = process.env.API_RATE_LIMIT_WINDOW || 15 * 60 * 1000;
         this.middlewares();
         this.routes();
     }
@@ -30,7 +30,7 @@ class App {
     middlewares = () => {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
-        this.app.use(express.static(path.join(__dirname, '..', 'public')));
+        this.app.use(express.static(path.join(__dirname, 'public')));
         this.app.use(cors());
         /*this.app.use(rateLimit({
             windowMs: parseInt(this.rateLimitWindow), // 15 minutes
