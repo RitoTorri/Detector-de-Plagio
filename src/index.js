@@ -1,2 +1,6 @@
 const App = require('./app');
-new App().start();
+
+const expressApp = new App().app;
+module.exports = expressApp;
+
+// new App().start();

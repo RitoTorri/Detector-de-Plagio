@@ -1,5 +1,6 @@
 // Importación de dependencias
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 
@@ -29,7 +30,7 @@ class App {
     middlewares = () => {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
-        this.app.use(express.static('public'));
+        this.app.use(express.static(path.join(__dirname, '..', 'public')));
         this.app.use(cors());
         this.app.use(rateLimit({
             windowMs: parseInt(this.rateLimitWindow), // 15 minutes
