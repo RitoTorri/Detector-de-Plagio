@@ -1,3 +1,8 @@
+// index.js en la raíz
 const App = require('./src/app');
-const expressApp = new App().app;
-module.exports = expressApp;
+
+// ¡AQUÍ ESTÁ EL ERROR! Debes usar el operador 'new'
+const appInstance = new App();
+
+// Exportas la propiedad 'app' de la instancia, que es el objeto Express
+module.exports = appInstance.app;

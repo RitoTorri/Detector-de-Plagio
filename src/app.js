@@ -19,7 +19,7 @@ class App {
 
     // Inicializacion de atributos
     constructor() {
-        this.app = new express();
+        this.app = express();
         //this.port = process.env.PORT || 3000;
         // this.rateLimit = process.env.API_RATE_LIMIT || 100;
         // this.rateLimitWindow = process.env.API_RATE_LIMIT_WINDOW || 15 * 60 * 1000;
@@ -30,7 +30,7 @@ class App {
     middlewares = () => {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
-        this.app.use(express.static(path.join(__dirname, '..', 'public')));
+        this.app.use(express.static(path.join(__dirname, 'public')));
         this.app.use(cors());
         /*this.app.use(rateLimit({
             windowMs: parseInt(this.rateLimitWindow), // 15 minutes
