@@ -13,16 +13,16 @@ class App {
     app;
     //port;
 
-    // Rate limir
-    //rateLimit;
-    //rateLimitWindow;
+    // Rate limit
+    rateLimit;
+    rateLimitWindow;
 
     // Inicializacion de atributos
     constructor() {
         this.app = express();
-        //this.port = process.env.PORT || 3000;
-        // this.rateLimit = process.env.API_RATE_LIMIT || 100;
-        // this.rateLimitWindow = process.env.API_RATE_LIMIT_WINDOW || 15 * 60 * 1000;
+        // this.port = process.env.PORT || 3000;
+        this.rateLimit = process.env.API_RATE_LIMIT || 100;
+        this.rateLimitWindow = process.env.API_RATE_LIMIT_WINDOW || 15 * 60 * 1000;
         this.middlewares();
         this.routes();
     }
@@ -32,11 +32,11 @@ class App {
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(express.static(path.join(__dirname, 'public')));
         this.app.use(cors());
-        /*this.app.use(rateLimit({
+        this.app.use(rateLimit({
             windowMs: parseInt(this.rateLimitWindow), // 15 minutes
             max: parseInt(this.rateLimit), // Limit each IP to 100 requests per `window` (here, per 15 minutes)
             message: 'Too many requests from this IP, please try again in 15 minutes'
-        }));*/
+        }));
     }
 
     routes = () => {
